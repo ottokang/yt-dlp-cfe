@@ -13,3 +13,7 @@ A [yt-dlp](https://github.com/yt-dlp/yt-dlp) frontend use Windows command line, 
 
 * [yt-dlp 2025.09.26](https://github.com/yt-dlp/yt-dlp/releases/tag/2025.09.26)
 * [ffmpeg 8.0 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
+
+## Icon
+
+* [Icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/video)
