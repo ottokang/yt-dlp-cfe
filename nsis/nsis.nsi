@@ -1,4 +1,4 @@
-﻿; Text encoding with UTF-8 BOM
+﻿; Text encoding must use UTF-8 BOM
 
 ; Set test mode
 !define TEST_MODE
@@ -9,7 +9,9 @@
 !define APP_VERSION "1.0.0"
 !define APP_PUBLISHER "yt-dlp-cfe Developers"
 !define APP_UNINSTKEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
-!define APP_ICON "icon.ico"
+!define APP_ICON "app.ico"
+!define UNINST_ICON "uninstall.ico"
+Unicode true
 
 ; Compression settings
 !ifdef TEST_MODE
@@ -20,6 +22,8 @@
 
 ; Installer settings
 Name "${APP_NAME}"
+InstallDir "$PROGRAMFILES64\${APP_NAME}"
+RequestExecutionLevel admin
 
 !ifdef TEST_MODE
     OutFile "..\release\${APP_NAME} ${APP_VERSION}-test.exe"
@@ -27,25 +31,31 @@ Name "${APP_NAME}"
     OutFile "..\release\${APP_NAME} ${APP_VERSION}.exe"
 !endif
 
-InstallDir "$PROGRAMFILES64\${APP_NAME}"
-RequestExecutionLevel admin
-
 ; Include Modern UI 2
 !include "MUI2.nsh"
 !define MUI_ICON "${APP_ICON}"
-!define MUI_UNICON "${APP_ICON}"
+!define MUI_UNICON "${UNINST_ICON}"
+
+; Welcome page
+!define MUI_WELCOMEPAGE_TITLE "Installation of ${APP_NAME}"
+!define MUI_WELCOMEPAGE_TEXT "Welcome to the setup wizard for ${APP_NAME}. This wizard will guide you through the installation process."
+!insertmacro MUI_PAGE_WELCOME
+
+; License, directory and installation pages
+!insertmacro MUI_PAGE_LICENSE "..\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
-
-Var CreateDesktopShortcut
-!define MUI_PAGE_CUSTOMFUNCTION_PRE DesktopShortcutPre
 !insertmacro MUI_PAGE_FINISH
+
+; Uninstallation pages
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
-!insertmacro MUI_LANGUAGE "TradChinese"
+
+; Language selection
+!insertmacro MUI_LANGUAGE "English"
 
 ; Installation section
-Section "MainSection"
+Section "Install"
     ; Set output path and install files
     SetOutPath "$INSTDIR"
     File /r "..\bin\*.*"
@@ -53,6 +63,7 @@ Section "MainSection"
     File /r "..\locales\*.*"
     File "..\${APP_EXE}"
     File "${APP_ICON}"
+    File "${UNINST_ICON}"
 
     ; Uninstall registry entries
     WriteRegStr HKLM "${APP_UNINSTKEY}" "DisplayName" "${APP_NAME}"
@@ -66,7 +77,7 @@ Section "MainSection"
 
     ; Calculate installed size
 
-    ; Uninstaller
+    ; Create Uninstaller
     WriteUninstaller "$INSTDIR\uninstall.exe"
 
     ; Create Start Menu shortcuts
@@ -79,20 +90,6 @@ Section "MainSection"
         CreateShortcut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
     ${EndIf}
 SectionEnd
-
-; Desktop shortcut pre-function
-Function DesktopShortcutPre
-    StrCpy $CreateDesktopShortcut 1
-FunctionEnd
-
-LangString FINISH_DESKTOP ${LANG_TRADCHINESE} "建立桌面捷徑"
-!define MUI_FINISHPAGE_SHOWREADME_CHECKBOXES
-!define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
-!define MUI_FINISHPAGE_SHOWREADME_TEXT $(FINISH_DESKTOP)
-!define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortcutChecked
-Function CreateDesktopShortcutChecked
-  StrCpy $CreateDesktopShortcut ${BST_CHECKED}
-FunctionEnd
 
 ; Uninstallation section
 Section "Uninstall"

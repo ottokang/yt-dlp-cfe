@@ -7,13 +7,17 @@
 * [yt-dlp 2025.11.12](https://github.com/yt-dlp/yt-dlp/releases/tag/2025.11.12)
 * [ffmpeg 8.0 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
 
+## 圖示
+
+圖示由 Freepik 提供（[Flaticon](https://www.flaticon.com/free-icons/video)）
+
 ## English
 
-A [yt-dlp](https://github.com/yt-dlp/yt-dlp) frontend use Windows command line, [ffmpeg](https://ffmpeg.org/) build in. Current veriosn:
+A [yt-dlp](https://github.com/yt-dlp/yt-dlp) frontend that uses Windows command line, with build-in [ffmpeg](https://ffmpeg.org/), currently using version:
 
 * [yt-dlp 2025.11.12](https://github.com/yt-dlp/yt-dlp/releases/tag/2025.11.12)
 * [ffmpeg 8.0 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
 
 ## Icon
 
-* [Icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/video)
+Icon created by Freepik - [Flaticon](https://www.flaticon.com/free-icons/video)
