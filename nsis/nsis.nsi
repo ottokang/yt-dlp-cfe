@@ -9,8 +9,8 @@
 !define APP_VERSION "1.0.0"
 !define APP_PUBLISHER "yt-dlp-cfe Developers"
 !define APP_UNINSTKEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
-!define APP_ICON "app.ico"
-!define UNINST_ICON "uninstall.ico"
+!define APP_ICON "yt-dlp-cfe_icon.ico"
+!define UNINST_ICON "uninstall_icon.ico"
 Unicode true
 
 ; Compression settings
@@ -56,11 +56,17 @@ RequestExecutionLevel admin
 
 ; Installation section
 Section "Install"
-    ; Set output path and install files
-    SetOutPath "$INSTDIR"
+    ; Set output path and copy files
+    SetOutPath "$INSTDIR\bin"
     File /r "..\bin\*.*"
+
+    SetOutPath "$INSTDIR\functions"
     File /r "..\functions\*.*"
+
+    SetOutPath "$INSTDIR\locales"
     File /r "..\locales\*.*"
+
+    SetOutPath "$INSTDIR"
     File "..\${APP_EXE}"
     File "${APP_ICON}"
     File "${UNINST_ICON}"
@@ -83,7 +89,7 @@ Section "Install"
     ; Create Start Menu shortcuts
     CreateDirectory "$SMPROGRAMS\${APP_NAME}"
     CreateShortcut "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
-    CreateShortcut "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\${APP_ICON}"
+    CreateShortcut "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\${UNINST_ICON}"
 
     ; Desktop shortcut (if selected)
     ${If} $CreateDesktopShortcut == 1
