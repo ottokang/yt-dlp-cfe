@@ -1,7 +1,7 @@
 ﻿; Text encoding must use UTF-8 BOM
 
 ; Set test mode
-!define TEST_MODE
+; !define TEST_MODE
 
 ; Basic definitions
 !define APP_NAME "yt-dlp-cfe"
@@ -33,6 +33,7 @@ RequestExecutionLevel admin
 
 ; Include Modern UI 2
 !include "MUI2.nsh"
+!include "FileFunc.nsh"
 !define MUI_ICON "${APP_ICON}"
 !define MUI_UNICON "${UNINST_ICON}"
 
@@ -45,6 +46,12 @@ RequestExecutionLevel admin
 !insertmacro MUI_PAGE_LICENSE "..\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
+
+; Finish page with "Create Desktop Shortcut" option
+!define MUI_FINISHPAGE_SHOWREADME ""
+!define MUI_FINISHPAGE_SHOWREADME_CHECKED
+!define MUI_FINISHPAGE_SHOWREADME_TEXT "Create desktop shortcut"
+!define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortcut_Function
 !insertmacro MUI_PAGE_FINISH
 
 ; Uninstallation pages
@@ -53,6 +60,11 @@ RequestExecutionLevel admin
 
 ; Language selection
 !insertmacro MUI_LANGUAGE "English"
+
+; Create desktop shortcut function
+Function CreateDesktopShortcut_Function
+    CreateShortcut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
+FunctionEnd
 
 ; Installation section
 Section "Install"
@@ -82,6 +94,9 @@ Section "Install"
     WriteRegDWORD HKLM "${APP_UNINSTKEY}" "NoRepair" 1
 
     ; Calculate installed size
+    ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
+    IntFmt $0 "0x%08X" $0
+    WriteRegDWORD HKLM "${APP_UNINSTKEY}" "EstimatedSize" "$0"
 
     ; Create Uninstaller
     WriteUninstaller "$INSTDIR\uninstall.exe"
@@ -90,11 +105,6 @@ Section "Install"
     CreateDirectory "$SMPROGRAMS\${APP_NAME}"
     CreateShortcut "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
     CreateShortcut "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\${UNINST_ICON}"
-
-    ; Desktop shortcut (if selected)
-    ${If} $CreateDesktopShortcut == 1
-        CreateShortcut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
-    ${EndIf}
 SectionEnd
 
 ; Uninstallation section
