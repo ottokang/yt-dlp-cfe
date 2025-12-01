@@ -1,8 +1,8 @@
 rem Input YouTube URL
 
-rem If in dev mode, set a default URL for testing
+rem If in dev mode, set a URL for testing
 if %is_dev%==true (
-    set input_url=
+    set "input_url="
     goto CHECK_INPUT
 )
 
@@ -11,7 +11,7 @@ cls
 echo:
 echo:
 echo %cyan%%lang_input_url_prompt:~1,-1% %reset_color% %green%
-set input_url=
+set "input_url="
 set /p input_url="> "
 echo %reset_color%
 
@@ -42,7 +42,7 @@ echo:
 rem Get video json information
 %_YT_DLP_BIN_% %_FFMPEG_LOCATION_% %cookies_option% --dump-single-json --simulate --flat-playlist "%input_url%" > info.json
 if %errorlevel%==0 (
-    for /f "tokens=*" %%a in ('powershell -command "(Get-Content info.json -Encoding UTF8 | ConvertFrom-Json).title"') do set title=%%a
+    for /f "tokens=*" %%a in ('powershell -command "(Get-Content info.json -Encoding UTF8 | ConvertFrom-Json).title"') do set "title=%%a"
 ) else (
     echo:
     echo %red%%lang_invaild_url:~1,-1%%reset_color%
@@ -52,7 +52,7 @@ if %errorlevel%==0 (
 
 rem Delete temp file, set URL
 del info.json
-set url=%input_url%
+set "url=%input_url%"
 goto INPUT_URL_END
 
 :INPUT_URL_END

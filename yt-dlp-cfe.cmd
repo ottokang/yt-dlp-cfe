@@ -5,29 +5,29 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 
 rem Set Const
-set _BIN_PATH_=.\bin
-set _YT_DLP_BIN_=%_BIN_PATH_%\yt-dlp.exe
-set _FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%
-set _VIDEO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites --embed-subs --convert-subs srt --sub-langs all,-live_chat
-set _AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites
+set "_BIN_PATH_=.\bin"
+set "_YT_DLP_BIN_=%_BIN_PATH_%\yt-dlp.exe"
+set "_FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%"
+set "_VIDEO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites --embed-subs --convert-subs srt --sub-langs all,-live_chat"
+set "_AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites"
 
 rem Load color code, locale name, initial variables
 call ".\functions\colors.cmd"
 call ".\locales\locale_name.cmd"
-set url=
-set title=
-set output_file_name=null
-set output_path_type=desktop
-set output_path_type_name=null
-set output_path=null
-set output_path_full_name=null
-set cookies_from_browser=
-set cookies_option=null
-set locale=null
+set "url="
+set "title="
+set "output_file_name=null"
+set "output_path_type=desktop"
+set "output_path_type_name=null"
+set "output_path=null"
+set "output_path_full_name=null"
+set "cookies_from_browser="
+set "cookies_option=null"
+set "locale=null"
 
-rem Set is_dev to true to skip input URL and go to MENU directly (for development use only)
-set is_dev=false
-::set is_dev=true
+rem Set development mode
+set "is_dev=false"
+::set "is_dev=true"
 
 rem Detect system language
 call ".\functions\detect_language.cmd"
@@ -45,13 +45,25 @@ if %is_dev%==true goto INPUT_URL
 
 rem Menu
 :MENU
+if "%url%"=="" (
+    set "double_quote_url="
+) else (
+    set double_quote_url="%url%"
+)
+
+if "%title%"=="" (
+    set "double_quote_title="
+) else (
+    set double_quote_title="%title%"
+)
+
 cls
 echo:
 echo    %cyan%《yt-dlp-cfe》%reset_color%                                                     %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
 echo                                                                       %yellow_strong% C %reset_color% Cookies: %cookies_from_browser%
-echo %lang_youtube_url:~1,-1%: %green%%url%%reset_color%
+echo %lang_youtube_url:~1,-1%: %green%%double_quote_url%%reset_color%
 echo:
-echo %lang_video_title:~1,-1%: %magenta%%title%%reset_color%
+echo %lang_video_title:~1,-1%: %magenta%%double_quote_title%%reset_color%
 echo:
 
 rem Check url type (playlist or single video)
