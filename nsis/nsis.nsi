@@ -1,7 +1,7 @@
 ﻿; Text encoding must use UTF-8 BOM
 
 ; Set test mode
-!define TEST_MODE
+; !define TEST_MODE
 
 ; Basic definitions
 !define APP_NAME "yt-dlp-cfe"
