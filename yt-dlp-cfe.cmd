@@ -10,6 +10,7 @@ set "_YT_DLP_BIN_=%_BIN_PATH_%\yt-dlp.exe"
 set "_FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%"
 set "_VIDEO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites --embed-subs --convert-subs srt --sub-langs all,-live_chat"
 set "_AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites"
+set "_VERSION_=1.0.1"
 
 rem Load color code, locale name, initial variables
 call ".\functions\colors.cmd"
@@ -59,8 +60,8 @@ if "%title%"=="" (
 
 cls
 echo:
-echo    %cyan%《yt-dlp-cfe》%reset_color%                                                     %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
-echo                                                                       %yellow_strong% C %reset_color% Cookies: %cookies_from_browser%
+echo    %cyan%《yt-dlp-cfe》%reset_color%    v%_VERSION_%                                           %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
+echo                                                                       %yellow_strong% C %reset_color% Cookies: %green_strong%%cookies_from_browser%%reset_color%
 echo %lang_youtube_url:~1,-1%: %green%%double_quote_url%%reset_color%
 echo:
 echo %lang_video_title:~1,-1%: %magenta%%double_quote_title%%reset_color%
