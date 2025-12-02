@@ -28,4 +28,4 @@ Icon created by Freepik - [Flaticon](https://www.flaticon.com/free-icons/video)
 
 ## Screenshot
 
-![screenshot_en-US](./media/screenshot_en-US.png
+![screenshot_en-US](./media/screenshot_en-US.png)
