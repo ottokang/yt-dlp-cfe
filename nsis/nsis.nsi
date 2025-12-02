@@ -1,12 +1,12 @@
 ﻿; Text encoding must use UTF-8 BOM
 
 ; Set test mode
-; !define TEST_MODE
+!define TEST_MODE
 
 ; Basic definitions
 !define APP_NAME "yt-dlp-cfe"
 !define APP_EXE  "yt-dlp-cfe.cmd"
-!define APP_VERSION "1.0.0"
+!define APP_VERSION "1.0.1"
 !define APP_PUBLISHER "yt-dlp-cfe Developers"
 !define APP_UNINSTKEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 !define APP_ICON "yt-dlp-cfe_icon.ico"
@@ -36,10 +36,10 @@ RequestExecutionLevel admin
 !include "FileFunc.nsh"
 !define MUI_ICON "${APP_ICON}"
 !define MUI_UNICON "${UNINST_ICON}"
+!insertmacro MUI_RESERVEFILE_LANGDLL
 
 ; Welcome page
-!define MUI_WELCOMEPAGE_TITLE "Installation of ${APP_NAME}"
-!define MUI_WELCOMEPAGE_TEXT "Welcome to the setup wizard for ${APP_NAME}. This wizard will guide you through the installation process."
+!define MUI_WELCOMEPAGE_TITLE $(LANG_Welcome_Title)
 !insertmacro MUI_PAGE_WELCOME
 
 ; License, directory and installation pages
@@ -50,7 +50,7 @@ RequestExecutionLevel admin
 ; Finish page with "Create Desktop Shortcut" option
 !define MUI_FINISHPAGE_SHOWREADME ""
 !define MUI_FINISHPAGE_SHOWREADME_CHECKED
-!define MUI_FINISHPAGE_SHOWREADME_TEXT "Create desktop shortcut"
+!define MUI_FINISHPAGE_SHOWREADME_TEXT $(LANG_CreateDesktopShortcut)
 !define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortcut_Function
 !insertmacro MUI_PAGE_FINISH
 
@@ -60,6 +60,27 @@ RequestExecutionLevel admin
 
 ; Language selection
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "TradChinese"
+!insertmacro MUI_LANGUAGE "SimpChinese"
+!define MUI_LANGDLL_ALWAYSSHOW
+
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
+
+Function un.onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
+
+; Welcome title language string
+LangString LANG_Welcome_Title ${LANG_ENGLISH}       "Welcome to ${APP_NAME} ${APP_VERSION} Setup"
+LangString LANG_Welcome_Title ${LANG_TRADCHINESE}   "歡迎使用 ${APP_NAME} ${APP_VERSION} 安裝精靈"
+LangString LANG_Welcome_Title ${LANG_SIMPCHINESE}   "欢迎使用 ${APP_NAME} ${APP_VERSION} 安装程序"
+
+; Create desktop shortcut language string
+LangString LANG_CreateDesktopShortcut ${LANG_ENGLISH}       "Create desktop shortcut"
+LangString LANG_CreateDesktopShortcut ${LANG_TRADCHINESE}   "建立桌面捷徑"
+LangString LANG_CreateDesktopShortcut ${LANG_SIMPCHINESE}   "建立桌面快捷方式"
 
 ; Create desktop shortcut function
 Function CreateDesktopShortcut_Function
