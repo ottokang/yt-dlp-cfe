@@ -3,7 +3,7 @@ rem en-US locale
 set lang_dev_mode="Development Mode"
 set lang_locale="locale: "
 set lang_select_locale="Please select locale: "
-set lang_input_url_prompt="Please input YouTube URL (Right click to paste):"
+set lang_input_url_prompt="Please paste YouTube URL (Right click or Ctrl + V):"
 set lang_did_not_input_url="Did not input URL"
 set lang_clean_url="Cleaned URL"
 set lang_checking_url="Checking YouTube URL validity..."
