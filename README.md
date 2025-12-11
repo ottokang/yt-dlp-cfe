@@ -17,7 +17,7 @@
 
 ## English
 
-A [yt-dlp](https://github.com/yt-dlp/yt-dlp) frontend that uses Windows command line, with build-in [ffmpeg](https://ffmpeg.org/), currently using version:
+A [yt-dlp](https://github.com/yt-dlp/yt-dlp) Windows command-line frontend with build-in [ffmpeg](https://ffmpeg.org/), currently using version:
 
 * [yt-dlp 2025.12.08](https://github.com/yt-dlp/yt-dlp/releases/tag/2025.12.08)
 * [ffmpeg 8.0.1 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
