@@ -3,7 +3,7 @@ rem zh-CN locale
 set lang_dev_mode="开发模式"
 set lang_locale="语系: "
 set lang_select_locale="请选择语系: "
-set lang_input_url_prompt="请输入 YouTube 网址 (按下滑鼠右键或是 Ctrl + V  ):"
+set lang_input_url_prompt="请贴上 YouTube 网址 (按下滑鼠右键或是 Ctrl + V  ):"
 set lang_did_not_input_url="未输入网址"
 set lang_clean_url="清理后网址"
 set lang_checking_url="检查 YouTube 网址是否有效..."

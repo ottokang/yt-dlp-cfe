@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.0.2]
+
 * Added
 
   * Update yt-dlp to 2025.12.08
