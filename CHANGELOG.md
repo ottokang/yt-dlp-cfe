@@ -2,24 +2,26 @@
 
 ## [Unreleased]
 
-###
+* Added
 
-- Update language file
+  * Update yt-dlp to 2025.12.08
+  * Update ffmpeg to 8.0.1
+  * Update language file
 
 ## [1.0.1] - 2025-12-02
 
-### Added
+* Added
 
-- Add version info after title
-- Show cookies with color
-- Installer support Traditional Chinese, Simplified Chinese
+  * Add version info after title
+  * Show cookies with color
+  * Installer support Traditional Chinese, Simplified Chinese
 
-### Changed
+* Changed
 
-- Update language file
+  * Update language file
 
 ## [1.0.0] - 2025-12-01
 
-### Added
+* Added
 
-- First release.
+  * First release.

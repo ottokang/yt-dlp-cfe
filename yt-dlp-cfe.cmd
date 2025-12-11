@@ -4,7 +4,7 @@ cd /D "%~dp0"
 chcp 65001 > nul
 setlocal enabledelayedexpansion
 
-rem Set Const
+rem Set const
 set "_BIN_PATH_=.\bin"
 set "_YT_DLP_BIN_=%_BIN_PATH_%\yt-dlp.exe"
 set "_FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%"
