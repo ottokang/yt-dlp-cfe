@@ -2,7 +2,14 @@
 
 ## [Unreleased]
 
-## [1.0.2]
+## [1.0.3] - 2025-12-22
+
+* Fixed
+
+  * Use TEMP folder for info.json file
+  * info.json use random suffix, avoid delete by other instance
+
+## [1.0.2] - 2025-12-11
 
 * Added
 

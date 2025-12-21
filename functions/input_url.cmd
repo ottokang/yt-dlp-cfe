@@ -1,5 +1,8 @@
 rem Input YouTube URL
 
+rem Set info file location
+set "info_file=%TEMP%\yt-dlp-cfe_info_%RANDOM%.json"
+
 rem If in dev mode, set a URL for testing
 if %is_dev%==true (
     set "input_url="
@@ -40,9 +43,9 @@ echo %blue%%lang_checking_url:~1,-1%%reset_color%
 echo:
 
 rem Get video json information
-%_YT_DLP_BIN_% %_FFMPEG_LOCATION_% %cookies_option% --dump-single-json --simulate --flat-playlist "%input_url%" > info.json
+%_YT_DLP_BIN_% %_FFMPEG_LOCATION_% %cookies_option% --dump-single-json --simulate --flat-playlist "%input_url%" > %info_file%
 if %errorlevel%==0 (
-    for /f "tokens=*" %%a in ('powershell -command "(Get-Content info.json -Encoding UTF8 | ConvertFrom-Json).title"') do set "title=%%a"
+    for /f "tokens=*" %%a in ('powershell -command "(Get-Content %info_file% -Encoding UTF8 | ConvertFrom-Json).title"') do set "title=%%a"
 ) else (
     echo:
     echo %red%%lang_invaild_url:~1,-1%%reset_color%
@@ -51,7 +54,7 @@ if %errorlevel%==0 (
 )
 
 rem Delete temp file, set URL
-del info.json
+del %info_file%
 set "url=%input_url%"
 goto INPUT_URL_END
 
