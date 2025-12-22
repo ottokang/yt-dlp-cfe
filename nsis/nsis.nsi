@@ -89,6 +89,9 @@ FunctionEnd
 
 ; Installation section
 Section "Install"
+    ; Remove previous installation
+    RMDir /r "$INSTDIR"
+
     ; Set output path and copy files
     SetOutPath "$INSTDIR\bin"
     File /r "..\bin\*.*"

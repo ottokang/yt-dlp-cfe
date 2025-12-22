@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+* Added
+
+  * Remove previous installation before install
+
 ## [1.0.3] - 2025-12-22
 
 * Fixed
