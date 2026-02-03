@@ -2,9 +2,12 @@
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-02-03
+
 * Added
 
     * Remove previous installation before install
+    * Update yt-dlp to 2026.01.31
 
 ## [1.0.3] - 2025-12-22
 
