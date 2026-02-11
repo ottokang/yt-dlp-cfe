@@ -1,10 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.5]
 
 * Added
 
     * Update yt-dlp to 2026.02.04
+    * Check if Deno installed
 
 ## [1.0.4] - 2026-02-03
 

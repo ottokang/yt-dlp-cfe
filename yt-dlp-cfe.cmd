@@ -25,6 +25,7 @@ set "output_path_full_name=null"
 set "cookies_from_browser="
 set "cookies_option=null"
 set "locale=null"
+set "is_deno=false"
 
 rem Set development mode
 set "is_dev=false"
@@ -44,6 +45,9 @@ call ".\functions\set_cookies.cmd"
 rem If is_dev is true, goto INPUT_URL
 if %is_dev%==true goto INPUT_URL
 
+rem Check if deno is installed
+call ".\functions\check_deno.cmd"
+
 rem Menu
 :MENU
 if "%url%"=="" (
@@ -62,6 +66,13 @@ cls
 echo:
 echo    %cyan%《yt-dlp-cfe》%reset_color%    v%_VERSION_%                                           %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
 echo                                                                       %yellow_strong% C %reset_color% Cookies: %green_strong%%cookies_from_browser%%reset_color%
+
+if "%is_deno%"=="true" (
+    echo:
+) else (
+    echo %red%%lang_deno_not_installed:~1,-1%%reset_color%
+)
+
 echo %lang_youtube_url:~1,-1%: %green%%double_quote_url%%reset_color%
 echo:
 echo %lang_video_title:~1,-1%: %magenta%%double_quote_title%%reset_color%
