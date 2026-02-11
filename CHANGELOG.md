@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+* Added
+
+    * Update yt-dlp to 2026.02.04
+
 ## [1.0.4] - 2026-02-03
 
 * Added

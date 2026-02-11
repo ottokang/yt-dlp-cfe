@@ -6,7 +6,7 @@
 ; Basic definitions
 !define APP_NAME "yt-dlp-cfe"
 !define APP_EXE  "yt-dlp-cfe.cmd"
-!define APP_VERSION "1.0.4"
+!define APP_VERSION "1.0.5"
 !define APP_PUBLISHER "yt-dlp-cfe Developers"
 !define APP_UNINSTKEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 !define APP_ICON "yt-dlp-cfe_icon.ico"
