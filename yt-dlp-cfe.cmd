@@ -5,12 +5,12 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 
 rem Set const
+set "_VERSION_=1.0.6"
 set "_BIN_PATH_=.\bin"
 set "_YT_DLP_BIN_=%_BIN_PATH_%\yt-dlp.exe"
 set "_FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%"
 set "_VIDEO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites --embed-subs --convert-subs srt --sub-langs all,-live_chat"
 set "_AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites"
-set "_VERSION_=1.0.5"
 
 rem Load color code, locale name, initial variables
 call ".\functions\colors.cmd"

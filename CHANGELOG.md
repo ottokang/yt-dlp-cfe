@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.6]
+
+* Added
+
+    * Update yt-dlp to 2026.03.03
+
 ## [1.0.5]
 
 * Added
