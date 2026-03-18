@@ -1,5 +1,7 @@
 # yt-dlp-cfe
 
+**[繁體中文](#繁體中文)** | **[English](#english)**
+
 ## 繁體中文
 
 一個使用 Windows 命令列的 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 前端，內建 [ffmpeg](https://ffmpeg.org/)，目前使用版本：
