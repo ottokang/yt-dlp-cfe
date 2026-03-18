@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7]
+
+* Added
+
+    * Update yt-dlp to 2026.03.17
+    * Update ffmpeg to 8.1
+
 ## [1.0.6]
 
 * Added
