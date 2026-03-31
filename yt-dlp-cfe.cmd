@@ -14,7 +14,7 @@ set "_AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --for
 
 rem Load color code, locale name, initial variables
 call ".\functions\colors.cmd"
-call ".\locales\locale_name.cmd"
+call ".\locales\locale_names.cmd"
 set "url="
 set "title="
 set "output_file_name=null"
