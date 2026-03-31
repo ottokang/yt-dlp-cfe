@@ -4,7 +4,7 @@
 
 ## 繁體中文
 
-一個使用 Windows 命令列的 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 前端，內建 [ffmpeg](https://ffmpeg.org/)，目前使用版本：
+一個使用 Windows 命令列的 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 前端工具，內建 [ffmpeg](https://ffmpeg.org/)，目前使用軟體版本：
 
 * [yt-dlp 2026.03.17](https://github.com/yt-dlp/yt-dlp/releases/tag/2026.03.17)
 * [ffmpeg 8.1 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
@@ -23,9 +23,11 @@ irm https://deno.land/install.ps1 | iex
 
 ![screenshot_zh-TW](./media/screenshot_zh-TW.png)
 
+---
+
 ## English
 
-A [yt-dlp](https://github.com/yt-dlp/yt-dlp) Windows command-line frontend with build-in [ffmpeg](https://ffmpeg.org/), currently using version:
+A [yt-dlp](https://github.com/yt-dlp/yt-dlp) Windows command-line front-end tool with build-in [ffmpeg](https://ffmpeg.org/), currently using version:
 
 * [yt-dlp 2026.03.17](https://github.com/yt-dlp/yt-dlp/releases/tag/2026.03.17)
 * [ffmpeg 8.1 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
