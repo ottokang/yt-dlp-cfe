@@ -3,10 +3,10 @@ rem Input YouTube URL
 rem Set info file location
 set "info_file=%TEMP%\yt-dlp-cfe_info_%RANDOM%.json"
 
-rem If in dev mode, set a URL for testing
+rem If in development mode, set a URL for testing
 if %is_dev%==true (
     set "input_url="
-    goto CHECK_INPUT
+    goto CHECK_INPUT_URL
 )
 
 rem Input URL prompt
@@ -18,7 +18,7 @@ set "input_url="
 set /p input_url="> "
 echo %reset_color%
 
-:CHECK_INPUT
+:CHECK_INPUT_URL
 rem Check if input is empty
 if "%input_url%"=="" (
     echo:

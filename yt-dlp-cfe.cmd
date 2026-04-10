@@ -12,7 +12,7 @@ set "_FFMPEG_LOCATION_=--ffmpeg-location %_BIN_PATH_%"
 set "_VIDEO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites --embed-subs --convert-subs srt --sub-langs all,-live_chat"
 set "_AUDIO_PARAMS_=--embed-thumbnail --embed-metadata --windows-filenames --force-overwrites"
 
-rem Load color code, locale name, initial variables
+rem Load colors, locale names, initial variables
 call ".\functions\colors.cmd"
 call ".\locales\locale_names.cmd"
 set "url="
@@ -37,11 +37,16 @@ call ".\functions\check_deno.cmd"
 rem Detect and set system language
 call ".\functions\detect_language.cmd"
 
-rem If is_dev is true, goto INPUT_URL
+rem If in development mode, goto INPUT_URL
 if %is_dev%==true goto INPUT_URL
 
 rem Menu
 :MENU
+
+rem Load langeuage file
+call ".\locales\%locale%.cmd"
+
+rem Set double quote for url and title
 if "%url%"=="" (
     set "double_quote_url="
 ) else (
@@ -193,7 +198,6 @@ goto MENU
 rem Select language
 :SELECT_LANGUAGE
 call ".\functions\select_language.cmd"
-call ".\locales\%locale%.cmd"
 goto MENU
 
 rem Select cookies from browser
