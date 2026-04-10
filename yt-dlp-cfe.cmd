@@ -23,7 +23,7 @@ set "output_path_type_name=null"
 set "output_path=null"
 set "output_path_full_name=null"
 set "cookies_from_browser="
-set "cookies_option=null"
+set "cookies_option=--no-cookies-from-browser"
 set "locale=null"
 set "is_deno=false"
 
@@ -36,10 +36,6 @@ call ".\functions\check_deno.cmd"
 
 rem Detect and set system language
 call ".\functions\detect_language.cmd"
-
-rem Set cookies from browser
-:SET_COOKIES_FROM_BROWSER
-call ".\functions\set_cookies.cmd"
 
 rem If is_dev is true, goto INPUT_URL
 if %is_dev%==true goto INPUT_URL
@@ -61,7 +57,7 @@ if "%title%"=="" (
 cls
 echo:
 echo    %cyan%《yt-dlp-cfe》%reset_color%    v%_VERSION_%                                           %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
-echo                                                                       %yellow_strong% C %reset_color% Cookies: %green_strong%%cookies_from_browser%%reset_color%
+echo                                                                       %yellow_strong% C %reset_color% Cookies: %green%%cookies_from_browser%%reset_color%
 
 if "%is_deno%"=="true" (
     echo:
@@ -203,7 +199,7 @@ goto MENU
 rem Select cookies from browser
 :SELECT_COOKIES_FROM_BROWSER
 call ".\functions\select_cookies_from_browser.cmd"
-goto SET_COOKIES_FROM_BROWSER
+goto MENU
 
 rem Refresh
 :REFRESH_MENU

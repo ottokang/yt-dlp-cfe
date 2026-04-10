@@ -20,14 +20,14 @@ echo:
 echo:
 
 choice /c 123456789dc /n /m %lang_select_cookies_from_prompt%
-if %errorlevel%==1 set cookies_from_browser=brave
-if %errorlevel%==2 set cookies_from_browser=chrome
-if %errorlevel%==3 set cookies_from_browser=chromium
-if %errorlevel%==4 set cookies_from_browser=edge
-if %errorlevel%==5 set cookies_from_browser=firefox
-if %errorlevel%==6 set cookies_from_browser=opera
-if %errorlevel%==7 set cookies_from_browser=safari
-if %errorlevel%==8 set cookies_from_browser=vivaldi
-if %errorlevel%==9 set cookies_from_browser=whale
-if %errorlevel%==10 set cookies_from_browser=
+if %errorlevel%==1 set "cookies_option=--cookies-from-browser brave" & set "cookies_from_browser=Brave"
+if %errorlevel%==2 set "cookies_option=--cookies-from-browser chrome" & set "cookies_from_browser=Chrome"
+if %errorlevel%==3 set "cookies_option=--cookies-from-browser chromium" & set "cookies_from_browser=Chromium"
+if %errorlevel%==4 set "cookies_option=--cookies-from-browser edge" & set "cookies_from_browser=Edge"
+if %errorlevel%==5 set "cookies_option=--cookies-from-browser firefox" & set "cookies_from_browser=Firefox"
+if %errorlevel%==6 set "cookies_option=--cookies-from-browser opera" & set "cookies_from_browser=Opera"
+if %errorlevel%==7 set "cookies_option=--cookies-from-browser safari" & set "cookies_from_browser=Safari"
+if %errorlevel%==8 set "cookies_option=--cookies-from-browser vivaldi" & set "cookies_from_browser=Vivaldi"
+if %errorlevel%==9 set "cookies_option=--cookies-from-browser whale" & set "cookies_from_browser=Whale"
+if %errorlevel%==10 set "cookies_option=--no-cookies-from-browser" & set "cookies_from_browser="
 if %errorlevel%==11 exit /b 0
