@@ -31,12 +31,11 @@ rem Set development mode
 set "is_dev=false"
 ::set "is_dev=true"
 
-rem Detect system language
-call ".\functions\detect_language.cmd"
+rem Check if deno is installed
+call ".\functions\check_deno.cmd"
 
-rem Set language
-:SET_LANGUAGE
-call ".\functions\set_language.cmd"
+rem Detect and set system language
+call ".\functions\detect_language.cmd"
 
 rem Set cookies from browser
 :SET_COOKIES_FROM_BROWSER
@@ -44,9 +43,6 @@ call ".\functions\set_cookies.cmd"
 
 rem If is_dev is true, goto INPUT_URL
 if %is_dev%==true goto INPUT_URL
-
-rem Check if deno is installed
-call ".\functions\check_deno.cmd"
 
 rem Menu
 :MENU
@@ -201,7 +197,8 @@ goto MENU
 rem Select language
 :SELECT_LANGUAGE
 call ".\functions\select_language.cmd"
-goto SET_LANGUAGE
+call ".\locales\%locale%.cmd"
+goto MENU
 
 rem Select cookies from browser
 :SELECT_COOKIES_FROM_BROWSER

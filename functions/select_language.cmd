@@ -14,7 +14,7 @@ echo   %blue_strong% C %reset_color% %lang_cancel_select_cookies:~1,-1%
 echo:
 
 choice /c 123c /n /m %lang_select_locale%
-if %errorlevel%==1 set locale=zh-TW
-if %errorlevel%==2 set locale=zh-CN
-if %errorlevel%==3 set locale=en-US
+if %errorlevel%==1 set "locale=zh-TW"
+if %errorlevel%==2 set "locale=zh-CN"
+if %errorlevel%==3 set "locale=en-US"
 if %errorlevel%==4 exit /b 0
