@@ -6,6 +6,7 @@
 
     * Refactor language, cookies selection
     * Update language file
+    * Update ffmpeg to 8.1.1
 
 ## [1.0.7]
 
