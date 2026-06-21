@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.8]
 
 * Fixed
 
     * Refactor language, cookies selection
     * Update language file
+    * Update yt-dlp to 2026.06.09
     * Update ffmpeg to 8.1.1
 
 ## [1.0.7]
