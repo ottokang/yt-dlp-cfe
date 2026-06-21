@@ -128,7 +128,7 @@ Section "Install"
     ; Create Start Menu shortcuts
     CreateDirectory "$SMPROGRAMS\${APP_NAME}"
     CreateShortcut "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_ICON}"
-    CreateShortcut "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\${UNINST_ICON}"
+    CreateShortcut "$SMPROGRAMS\${APP_NAME}\Uninstall ${APP_NAME}.lnk" "$INSTDIR\uninstall ${APP_NAME}.exe" "" "$INSTDIR\${UNINST_ICON}"
 SectionEnd
 
 ; Uninstallation section
