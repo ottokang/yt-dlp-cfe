@@ -59,6 +59,7 @@ if "%title%"=="" (
     set double_quote_title="%title%"
 )
 
+rem Start menu display
 cls
 echo:
 echo    %cyan%《yt-dlp-cfe》%reset_color%    v%_VERSION_%                                           %white_strong% L %reset_color% %lang_locale:~1, -1%%locale%
@@ -216,5 +217,4 @@ choice /n /m "%lang_do_you_want_end:~1, -1%? [%green%Y%reset_color%, %red%N%rese
 if !ERRORLEVEL!==1 (
     exit /b 0
 )
-
 goto MENU
