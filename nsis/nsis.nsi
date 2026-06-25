@@ -123,7 +123,7 @@ Section "Install"
     WriteRegDWORD HKLM "${APP_UNINSTKEY}" "EstimatedSize" "$0"
 
     ; Create Uninstaller
-    WriteUninstaller "$INSTDIR\uninstall.exe"
+    WriteUninstaller "$INSTDIR\uninstall ${APP_NAME}.exe"
 
     ; Create Start Menu shortcuts
     CreateDirectory "$SMPROGRAMS\${APP_NAME}"
