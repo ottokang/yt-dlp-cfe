@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9]
+
+* Update
+
+    * Update yt-dlp to 2026.07.04
+    * Update ffmpeg to 8.1.2
+
 ## [1.0.8]
 
 * Fixed
