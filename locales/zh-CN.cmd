@@ -2,8 +2,6 @@ rem zh-CN locale
 
 set "LANG_locale_name=简体中文"
 set "LANG_dev_mode=开发模式"
-set "LANG_locale=语系: "
-set "LANG_select_locale=请选择语系: "
 set "LANG_input_url_prompt=请贴上 YouTube 网址 (按下滑鼠右键或是 Ctrl + V  ):"
 set "LANG_did_not_input_url=未输入网址"
 set "LANG_clean_url=清理后网址"

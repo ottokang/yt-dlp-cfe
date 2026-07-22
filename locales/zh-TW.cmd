@@ -2,8 +2,6 @@ rem zh-TW locale
 
 set "LANG_locale_name=繁體中文"
 set "LANG_dev_mode=開發模式"
-set "LANG_locale=語系: "
-set "LANG_select_locale=請選擇語系: "
 set "LANG_input_url_prompt=請貼上 YouTube 網址（按下滑鼠右鍵或是 Ctrl + V):"
 set "LANG_did_not_input_url=未輸入網址"
 set "LANG_clean_url=清理後網址"

@@ -61,8 +61,7 @@ if "%title%"=="" (
 rem Start menu display
 cls
 echo:
-echo    %cyan%^<^< yt-dlp-cfe ^>^>%reset_color%    v%_VERSION_%                                         %white_strong% L %reset_color% %LANG_locale%%LANG_locale_name%
-echo                                                                       %yellow_strong% C %reset_color% Cookies: %green%%cookies_from_browser%%reset_color%
+echo     %cyan%^<^< yt-dlp-cfe ^>^>%reset_color%    v%_VERSION_%                      %yellow_strong% C %reset_color% Cookies: %green%%cookies_from_browser%%reset_color%
 
 if "%is_deno_installed%"=="true" (
     echo:
@@ -82,33 +81,32 @@ rem Set output folder
 call ".\functions\set_output_folder.cmd"
 
 echo:
-echo    %magenta_strong% I %reset_color% %LANG_input_url%
+echo     %magenta_strong% I %reset_color% %LANG_input_url%
 echo:
 echo:
-echo    %red_strong% V %reset_color% %LANG_download_as_mp4%
+echo     %red_strong% V %reset_color% %LANG_download_as_mp4%
 echo:
-echo    %green_strong% B %reset_color% %LANG_download_as_best%
-echo:
-echo:
-echo    %yellow_strong% M %reset_color% %LANG_download_as_mp3%
-echo:
-echo    %blue_strong% A %reset_color% %LANG_download_as_aac%
+echo     %green_strong% B %reset_color% %LANG_download_as_best%
 echo:
 echo:
-echo    %cyan_strong% Q %reset_color% %LANG_exit%
+echo     %yellow_strong% M %reset_color% %LANG_download_as_mp3%
+echo:
+echo     %blue_strong% A %reset_color% %LANG_download_as_aac%
+echo:
+echo:
+echo     %cyan_strong% Q %reset_color% %LANG_exit%
 echo:
 
-choice /c vbmaidlc0q /n /m "%LANG_please_choose%"
+choice /c vbmaidc0q /n /m "%LANG_please_choose%"
 if %errorlevel%==1 goto MP4
 if %errorlevel%==2 goto BEST_VIDEO
 if %errorlevel%==3 goto MP3
 if %errorlevel%==4 goto AAC
 if %errorlevel%==5 goto INPUT_URL
 if %errorlevel%==6 goto SWITCH_OUTPUT_PATH
-if %errorlevel%==7 goto SELECT_LANGUAGE
-if %errorlevel%==8 goto SELECT_COOKIES_FROM_BROWSER
-if %errorlevel%==9 goto REFRESH_MENU
-if %errorlevel%==10 goto END
+if %errorlevel%==7 goto SELECT_COOKIES_FROM_BROWSER
+if %errorlevel%==8 goto REFRESH_MENU
+if %errorlevel%==9 goto END
 
 rem Download as MP4
 :MP4
@@ -193,11 +191,6 @@ if %output_path_type%==desktop (
 ) else (
     set output_path_type=desktop
 )
-goto MENU
-
-rem Select language
-:SELECT_LANGUAGE
-call ".\functions\select_language.cmd"
 goto MENU
 
 rem Select cookies from browser

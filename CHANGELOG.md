@@ -5,6 +5,7 @@
 * Refactor
 
     * Remove language double quotes
+    * Remove language selection
 
 ## [1.0.9]
 

@@ -2,8 +2,6 @@ rem en-US locale
 
 set "LANG_locale_name=English (US)"
 set "LANG_dev_mode=Development Mode"
-set "LANG_locale=locale: "
-set "LANG_select_locale=Please select locale: "
 set "LANG_input_url_prompt=Please paste YouTube URL (Right click or Ctrl + V):"
 set "LANG_did_not_input_url=Did not input URL"
 set "LANG_clean_url=Cleaned URL"
