@@ -13,7 +13,7 @@ rem Input URL prompt
 cls
 echo:
 echo:
-echo %cyan%%lang_input_url_prompt:~1,-1% %reset_color% %green%
+echo %cyan%%LANG_input_url_prompt% %reset_color% %green%
 set "input_url="
 set /p input_url="> "
 echo %reset_color%
@@ -22,7 +22,7 @@ echo %reset_color%
 rem Check if input is empty
 if "%input_url%"=="" (
     echo:
-    echo %yellow%%lang_did_not_input_url:~1,-1%%reset_color%
+    echo %yellow%%LANG_did_not_input_url% %reset_color%
     pause
     goto INPUT_URL_END
 )
@@ -37,9 +37,9 @@ for /f "delims=" %%a in ('powershell -command "'%input_url%' -replace '\?feature
 )
 
 rem Validate URL
-echo %lang_clean_url:~1,-1%: %yellow%"%input_url%"%reset_color%
+echo %LANG_clean_url%: %yellow%"%input_url%"%reset_color%
 echo:
-echo %blue%%lang_checking_url:~1,-1%%reset_color%
+echo %blue%%LANG_checking_url%%reset_color%
 echo:
 
 rem Get video json information
@@ -48,7 +48,7 @@ if %errorlevel%==0 (
     for /f "tokens=*" %%a in ('powershell -command "(Get-Content %info_file% -Encoding UTF8 | ConvertFrom-Json).title"') do set "title=%%a"
 ) else (
     echo:
-    echo %red%%lang_invaild_url:~1,-1%%reset_color%
+    echo %red%%LANG_invalid_url%%reset_color%
     pause
     goto INPUT_URL_END
 )

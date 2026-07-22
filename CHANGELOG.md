@@ -1,5 +1,11 @@
 # Changelog
 
+## [unreleased]
+
+* Refactor
+
+    * Remove language double quotes
+
 ## [1.0.9]
 
 * Update

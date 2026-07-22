@@ -13,13 +13,13 @@ echo   %white_strong% 7 %reset_color% Safari
 echo   %red_strong% 8 %reset_color% Vivaldi
 echo   %green_strong% 9 %reset_color% Whale
 echo:
-echo   %yellow_strong% D %reset_color% %lang_disable_cookies:~1,-1%
+echo   %yellow_strong% D %reset_color% %LANG_disable_cookies%
 echo:
-echo   %blue_strong% C %reset_color% %lang_cancel_select_cookies:~1,-1%
+echo   %blue_strong% C %reset_color% %LANG_cancel_and_return%
 echo:
 echo:
 
-choice /c 123456789dc /n /m %lang_select_cookies_from_prompt%
+choice /c 123456789dc /n /m "%LANG_select_cookies_from_prompt%"
 if %errorlevel%==1 set "cookies_option=--cookies-from-browser brave" & set "cookies_from_browser=Brave"
 if %errorlevel%==2 set "cookies_option=--cookies-from-browser chrome" & set "cookies_from_browser=Chrome"
 if %errorlevel%==3 set "cookies_option=--cookies-from-browser chromium" & set "cookies_from_browser=Chromium"
