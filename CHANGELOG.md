@@ -1,11 +1,10 @@
 # Changelog
 
-## [unreleased]
+## [1.0.10]
 
-* Refactor
-
-    * Remove language double quotes
-    * Remove language selection
+* Update ffmpeg to 9.0.1
+* Remove language double quotes
+* Remove language selection
 
 ## [1.0.9]
 
