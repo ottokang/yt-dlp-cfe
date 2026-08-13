@@ -4,7 +4,7 @@
 
 ## 繁體中文
 
-一個使用 Windows 命令列的 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 前端工具，內建 [FFmpeg](https://ffmpeg.org/)，目前用軟體版本：
+一個使用 Windows 命令列的 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 前端工具，內建 [FFmpeg](https://ffmpeg.org/)，目前使用軟體版本：
 
 * [yt-dlp 2026.07.04](https://github.com/yt-dlp/yt-dlp/releases/tag/2026.07.04)
 * [FFmpeg 9.0.1 binary from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
