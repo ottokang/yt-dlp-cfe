@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.11] -2026.08.20
+
+* Update yt-dlp to 2026.08.19
+
 ## [1.0.10]
 
 * Update ffmpeg to 9.0.1
@@ -8,76 +12,52 @@
 
 ## [1.0.9]
 
-* Update
-
-    * Update yt-dlp to 2026.07.04
-    * Update ffmpeg to 8.1.2
+* Update yt-dlp to 2026.07.04
+* Update ffmpeg to 8.1.2
 
 ## [1.0.8]
 
-* Fixed
-
-    * Refactor language, cookies selection
-    * Update language file
-    * Update yt-dlp to 2026.06.09
-    * Update ffmpeg to 8.1.1
+* Refactor language, cookies selection
+* Update language file
+* Update yt-dlp to 2026.06.09
+* Update ffmpeg to 8.1.1
 
 ## [1.0.7]
 
-* Added
-
-    * Update yt-dlp to 2026.03.17
-    * Update ffmpeg to 8.1
+* Update ffmpeg to 8.1
 
 ## [1.0.6]
 
-* Added
-
-    * Update yt-dlp to 2026.03.03
+* Update yt-dlp to 2026.03.03
 
 ## [1.0.5]
 
-* Added
-
-    * Update yt-dlp to 2026.02.04
-    * Check if Deno installed
+* Update yt-dlp to 2026.02.04
+* Check if Deno installed
 
 ## [1.0.4] - 2026-02-03
 
-* Added
-
-    * Remove previous installation before install
-    * Update yt-dlp to 2026.01.31
+* Remove previous installation before install
+* Update yt-dlp to 2026.01.31
 
 ## [1.0.3] - 2025-12-22
 
-* Fixed
-
-    * Use TEMP folder for info.json file
-    * info.json use random suffix, avoid delete by other instance
+* Use TEMP folder for info.json file
+* info.json use random suffix, avoid delete by other instance
 
 ## [1.0.2] - 2025-12-11
 
-* Added
-
-    * Update yt-dlp to 2025.12.08
-    * Update ffmpeg to 8.0.1
-    * Update language file
+* Update yt-dlp to 2025.12.08
+* Update ffmpeg to 8.0.1
+* Update language file
 
 ## [1.0.1] - 2025-12-02
 
-* Added
-
-    * Add version info after title
-    * Show cookies with color
-    * Installer support Traditional Chinese, Simplified Chinese
-
-* Changed
-
-    * Update language file
+* Add version info after title
+* Show cookies with color
+* Installer support Traditional Chinese, Simplified Chinese
+* Update language file
 
 ## [1.0.0] - 2025-12-01
 
-* Added
-
-    * First release.
+* First release.
