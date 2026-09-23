@@ -112,7 +112,7 @@ Section "Install"
     WriteRegStr HKLM "${APP_UNINSTKEY}" "DisplayVersion" "${APP_VERSION}"
     WriteRegStr HKLM "${APP_UNINSTKEY}" "Publisher" "${APP_PUBLISHER}"
     WriteRegStr HKLM "${APP_UNINSTKEY}" "DisplayIcon" "$INSTDIR\${APP_ICON}"
-    WriteRegStr HKLM "${APP_UNINSTKEY}" "UninstallString" '"$INSTDIR\uninstall.exe"'
+    WriteRegStr HKLM "${APP_UNINSTKEY}" "UninstallString" '"$INSTDIR\uninstall ${APP_NAME}.exe"'
     WriteRegStr HKLM "${APP_UNINSTKEY}" "InstallLocation" "$INSTDIR"
     WriteRegDWORD HKLM "${APP_UNINSTKEY}" "NoModify" 1
     WriteRegDWORD HKLM "${APP_UNINSTKEY}" "NoRepair" 1
